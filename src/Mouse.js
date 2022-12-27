@@ -4,14 +4,14 @@ import React, { useState } from "react";
 const Mouse = (props) => {
   //state = { x: 0, y: 0 };
   const [coordinates, setCoordinates] = useState({ x: 0, y: 0 });
-
+  console.log("Mouse props : ", props);
   const handleMouseMove = (e) => {
     setCoordinates({
       x: e.clientX,
-      y: e.clientY
+      y: e.clientY,
     });
   };
-
+  console.log("props.render(coordinates) : ", props.render(coordinates));
   return (
     <div
       className={props.className}
@@ -19,6 +19,9 @@ const Mouse = (props) => {
       onMouseMove={handleMouseMove}
     >
       {props.render(coordinates)}
+      x:{coordinates.x}
+      {"   "}
+      y:{coordinates.y}
     </div>
   );
 };
