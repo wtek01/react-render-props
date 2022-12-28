@@ -11,7 +11,6 @@ const Mouse = (props) => {
       y: e.clientY,
     });
   };
-  console.log("props.render(coordinates) : ", props.render(coordinates));
   return (
     <div
       className={props.className}
@@ -19,9 +18,6 @@ const Mouse = (props) => {
       onMouseMove={handleMouseMove}
     >
       {props.render(coordinates)}
-      x:{coordinates.x}
-      {"   "}
-      y:{coordinates.y}
     </div>
   );
 };
